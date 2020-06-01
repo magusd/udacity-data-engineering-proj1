@@ -30,7 +30,7 @@ CREATE TABLE artists (artist_id varchar (255), name varchar(255), location varch
 
 # start_time, hour, day, week, month, year, weekday
 time_table_create = ("""
-CREATE TABLE times (hour int, day int, week int, month int, year int, weekday int)
+CREATE TABLE times (start_time timestamp , hour int, day int, week int, month int, year int, weekday int)
 """)
 
 # INSERT RECORDS
@@ -53,7 +53,7 @@ INSERT INTO artists (artist_id, name, location, latitude, longitude) VALUES (%s,
 
 
 time_table_insert = ("""
-INSERT INTO times (artist_id, name, location, latitude, longitude) VALUES (%s, %s, %s, %s, %s)
+INSERT INTO times (start_time, hour, day, week, month, year, weekday) VALUES (%s, %s, %s, %s, %s, %s, %s)
 """)
 
 # FIND SONGS
